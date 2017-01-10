@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>27 . Convert decimal to binary, hexadecimal or octal  </h3>
+INPUT : <input type="number" id ="str" onkeyup="clearResult" >
+<input type="button" name="check" id ="check" onclick="checkString()" value="COVERT">
+<br><br>
+<div id="result">RESULT IN BINARY:</div>
+<div id="result2">RESULT IN OCTAL :</div>
+<div id="result3">RESULT IN HEXADECIMAL :</div>
+
+
+
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        var result2 = document.getElementById("result2");
+        var result3 = document.getElementById("result3");
+        result.innerHTML=" ";
+        result2.innerHTML=" ";
+        result3.innerHTML=" ";
+    }
+
+    function reverse(s){
+        return s.split("").reverse().join("");
+    }
+
+    function ConvertToAnyBase(number, base) {
+        var a = new Array("A","B","C","D","E","F");
+        var str =" ";
+        var str2;
+
+        while(Number(number)!=Number(0) ){
+
+            str2 = Number(number%base);
+
+            if(str2>=10){
+                str2 = a[ str2 - 10 ];
+
+            }
+            str += str2;
+            number = parseInt( number / base );
+        }
+        return reverse(str);
+    }
+    var checkString =function(){
+
+        var result = document.getElementById("result");
+
+        var result2 = document.getElementById("result2");
+        var result3 = document.getElementById("result3");
+
+        var str = document.getElementById("str");
+
+        var finalString="RESULT IN BINARY : ";
+        var addStr = ConvertToAnyBase(Number(str.value), Number(2) );
+        result.innerHTML = finalString + addStr ;
+
+        finalString="RESULT IN OCTAL : ";
+        addStr = ConvertToAnyBase(Number(str.value), Number(8) );
+        result2.innerHTML = finalString + addStr ;
+
+        finalString="RESULT IN HEXADECIMAL : ";
+        addStr = ConvertToAnyBase(Number(str.value), Number(16) );
+        result3.innerHTML = finalString + addStr ;
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>26 . Check string is in hexadecimal or not </h3>
+INPUT : <input type="text" id ="str" onkeyup="clearResult" >
+<input type="button" name="check" id ="check" onclick="checkString()" value="CHECK">
+<br><br>
+<div id="result">RESULT :</div>
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        result.innerHTML=" ";
+    }
+
+    var checkString =function(){
+
+        var result = document.getElementById("result");
+        var str = document.getElementById("str");
+
+        var finalString="RESULT : ";
+        var len = str.value.length;
+        var flag=true;
+        for(var i=0; i<len; i++)
+        {
+           var temp = str.value.charAt(i);
+            if ( !( (  temp>='0'&&temp<='9' ) ||   (  temp>='a'&&temp<='f' ) ||  (  temp>='A'&&temp<='F' )    )      )
+            {
+                flag=false;
+                break;
+            }
+        }
+
+        finalString += "  " + String(flag).toUpperCase() ;
+        result.innerHTML = finalString ;
+    }
+</script>
+
+</html>

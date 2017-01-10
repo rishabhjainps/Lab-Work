@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .over{
+                font-weight: bold;
+                font-family: "Segoe UI";
+                font-size: 200%;
+                font-style: italic;
+                text-decoration: underline;
+            }
+
+            .overUnderline{
+                font-style: italic;
+                text-decoration: underline;
+            }
+
+            .overbold{
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="heading"> CSE DEPARTMENT </div>
+        <br><br><br>
+        <div id="intro">
+            The department attracts high quality students from all over India and has an impressive placement record.
+        </div  >
+        <p id="para" >
+            Many of graduates choose to join some of the best institutions of higher learning around the world,
+            whereas some prefer to gain a few years of work experience before deciding their next course of action.
+            Still some others choose to chase their dream taking a path that is less travelled like taking the social
+            welfare route or liberal arts based vocations.
+        </p>
+        <div >
+            Corporate Research Laboratories
+            <ol>
+                 <li>Microsoft Research  </li>
+                 <li>IBM</li>
+                <li>CISCO</li>
+             </ol>
+        </div>
+    </body>
+
+    <script type = "text/javascript">
+        var heading =document.getElementById("heading");
+        heading.onmouseover= function () {
+            heading.className="over";
+        }
+        heading.onmouseout =function () {
+            heading.className="";
+        }
+
+        var para =document.getElementById("para");
+        para.onmouseover= function () {
+            para.className="overUnderline";
+        }
+        para.onmouseout =function () {
+            para.className="";
+        }
+
+        var intro =document.getElementById("intro");
+        intro.onmouseover= function () {
+            intro.className="overbold";
+        }
+        intro.onmouseout =function () {
+            intro.className="";
+        }
+        </script>
+
+</html>

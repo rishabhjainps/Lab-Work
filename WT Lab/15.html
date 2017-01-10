@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            input,textarea{
+                float: right;
+            }
+            .error{
+                border-color: #900;
+                background-color: #ff9688;
+            }
+            .correct{
+                border-color: green;
+                background-color: #a2ff8c;
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+        <h3>Registration Form</h3>
+        <form style=" width:25%" onsubmit="return validate()">
+            <fieldset>
+
+                <legend>Form</legend>
+
+                Name :<input type="text" id="Name"  name="Name" ><br><br>
+                Age :<input type="text" id="age" name="age" ><br><br>
+                Address:<textarea type="text" id="address" name="address">Enter your address</textarea>
+                <br><br><br>
+                Favorite Subject :<input type="text" id="subject" name="subject" ><br><br>
+                <input type="submit" style="float:left;" > <input type="reset" style="margin-left: 5px; float:left;">
+            </fieldset>
+
+
+        </form>
+
+    </body>
+
+    <script type = "text/javascript">
+
+        var age = document.getElementById("age");
+        var name1 = document.getElementById("Name");
+        var address = document.getElementById("address");
+        var subject = document.getElementById("subject");
+
+        age.addEventListener("keyup",function(){
+
+            if( (age.value >= 1 && age.value <=150 )&& !isNaN(age.value) ){
+                age.className = "correct";
+            }else{
+                age.className = "error";
+            }
+        });
+
+        name1.addEventListener("keyup",function(){
+
+            if( isNaN(name1.value) ){
+                name1.className = "correct";
+            }else{
+                name1.className = "error";
+            }
+        });
+
+        address.addEventListener("keyup",function(){
+            if( isNaN(address.value) ){
+                address.className = "correct";
+            }else{
+                address.className = "error";
+            }
+        });
+        subject.addEventListener("keyup",function(){
+            if( isNaN(subject.value) ){
+                subject.className = "correct";
+            }else{
+                subject.className = "error";
+            }
+        });
+
+        function validate(){
+
+            var check = (age.value >= 1 && age.value <=150 && !isNaN(age.value) )
+                            &&( isNaN(name.value) )&&( isNaN(address.value) )
+                    &&(isNaN(subject.value) ) ;
+            return check;
+
+        }
+    </script>
+
+</html>

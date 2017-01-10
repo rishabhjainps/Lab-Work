@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>23 . Hide email from unauthorized user </h3>
+INPUT : <input type="text" id ="str" onkeyup="clearResult" >
+<input type="button" name="check" id ="check" onclick="checkString()" value="HIDE">
+<br><br>
+<div id="result">RESULT :</div>
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        result.innerHTML=" ";
+    }
+
+    var checkString =function(){
+
+        var result = document.getElementById("result");
+        var str = document.getElementById("str");
+
+        var finalString="RESULT : ";
+        var showStr =" ";
+        var hiding = str.value.split("@");
+        var wantToHide = hiding[0];
+        var len = wantToHide.length;
+
+        for(var i=0; i<len; i++)
+        {
+            if(i>=len/2)
+            showStr += wantToHide.charAt(i);
+            else
+            showStr += '*';
+        }
+        showStr += '@' + hiding[1];
+
+        str.value=" ";
+        finalString += showStr ;
+        result.innerHTML = finalString ;
+    }
+</script>
+
+</html>

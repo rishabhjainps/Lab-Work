@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>24 . Insert a string at a particular position of another string </h3>
+INPUT STR : <input type="text" id ="str" onkeyup="clearResult" >
+<br><br>
+STRING TO INSERT : <input type="text" id ="str2" onkeyup="clearResult" >
+<br><br>
+AT POSITION TO BE INSERTED : <input type="number" id ="pos" onkeyup="clearResult" >
+<br><br>
+<input type="button" name="check" id ="check" onclick="checkString()" value="Merge">
+<br><br>
+<div id="result">RESULT :</div>
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        result.innerHTML=" ";
+    }
+
+    function mergetwo(value, value2, number) {
+
+        return value.substr(0,number) +value2 +value.substr(number,value.length);
+
+    }
+    var checkString =function(){
+
+        var result = document.getElementById("result");
+        var str = document.getElementById("str");
+        var str2 = document.getElementById("str2");
+        var pos = document.getElementById("pos");
+        var finalString="RESULT : ";
+        finalString +=mergetwo(str.value,str2.value,Number(pos.value));
+        result.innerHTML = finalString ;
+    }
+</script>
+
+</html>

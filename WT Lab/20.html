@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>20 . TELL input is string or not and blank or not </h3>
+    INPUT : <input type="text" id ="str" onkeyup="clearResult" >
+    <input type="button" name="check" id ="check" onclick="checkString()" value="check">
+    <br><br>
+    <div id="result">RESULT :</div>
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        result.innerHTML=" ";
+    }
+
+    var checkString =function(){
+        console.log("in func");
+        var result = document.getElementById("result");
+        var check = document.getElementById("check");
+        var str = document.getElementById("str");
+
+        var finalString="RESULT : ";
+        if(isNaN(str.value))
+            finalString += "INPUT IS A STRING  ";
+        else
+            finalString += "INPUT IS NOT A STRING  ";
+
+        if(str.value.length==0)
+            finalString += "AND INPUT IS BLANK";
+        else
+            finalString += "AND INPUT IS NOT BLANK";
+        console.log("in func  " + finalString);
+        result.innerHTML = finalString ;
+    }
+</script>
+
+</html>

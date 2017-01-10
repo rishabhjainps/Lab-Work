@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>21 . SORT THE ARRAY </h3>
+    ENTER N : <input type="text" id ="enterN" >
+    <input type="button" onclick="generate()" value="Generate ">
+    <br><br>
+    <div id="result"></div>
+
+</form>
+
+</body>
+
+<script>
+
+    var sortTheArray = function () {
+
+        var n = document.getElementById("result").childNodes.length;
+
+        n--;
+        n=n/3;
+        for(var i=0 ; i<n; i++)
+        {
+            var member = document.getElementById("result").childNodes[3*i];
+            var temp = member.value, temp2;
+            for(var j=i+1; j<n; j++)
+            {
+                var member2 = document.getElementById("result").childNodes[3*j];
+                if( Number(temp) > Number(member2.value) ){
+                    temp2  = member2.value;
+                    member2.value = temp;
+                    temp = temp2;
+                }
+            }
+            member.value = temp ;
+        }
+    }
+
+    var generate = function () {
+
+        var N= document.getElementById("enterN").value;
+        var result = document.getElementById("result");
+        while(result.hasChildNodes()) {
+            result.removeChild(result.lastChild);
+        }
+
+        for(var i=0; i<N; i++){
+            var input = document.createElement("input");
+            input.type="number";
+            input.value=0;
+            input.name="member"+i;
+            result.appendChild(input);
+
+            result.appendChild(document.createElement("br"));
+            result.appendChild(document.createElement("br"));
+        }
+
+        var button = document.createElement("input");
+        button.type= "button";
+        button.id = "sorting";
+        button.onclick = function(){
+          sortTheArray();
+        };
+        button.value = "Sort";
+        result.appendChild(button);
+    }
+
+</script>
+
+</html>

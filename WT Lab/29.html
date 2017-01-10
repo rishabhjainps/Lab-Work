@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>29 . Count no. of word </h3>
+INPUT : <input type="text" id ="str" onkeyup="clearResult" >
+<input type="button" name="check" id ="check" onclick="checkString()" value="COUNT">
+<br><br>
+<div id="result">RESULT :</div>
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        result.innerHTML=" ";
+    }
+
+
+
+    var checkString =function(){
+        console.log("in func");
+        var result = document.getElementById("result");
+        var str = document.getElementById("str");
+
+        var finalString="RESULT : ";
+
+        str.value = str.value.trim();
+        str.value = str.value.replace(/  +/g, ' ');
+        finalString += str.value ;
+        console.log("in func  " + finalString);
+
+        finalString += "<br><br>  COUNT OF WORDS: " + str.value.split(" ").length;
+        result.innerHTML = finalString ;
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>28 . MERGE  SORT THE ARRAY </h3>
+ENTER N : <input type="text" id ="enterN" >
+<input type="button" onclick="generate()" value="Generate ">
+<br><br>
+<div id="result"></div>
+
+</form>
+
+</body>
+
+<script>
+
+    function merge(arr, start, end)
+    {
+        var i=0, j=0, k=0;
+        var a=[""];
+        var mid =  Math.floor((start+end)/2);
+        var n =mid - start, m = end - (mid+1);
+        while(i<=n && j<=m)
+        {
+            if( Number (arr[start+i].value) < Number ( arr[mid+1+j].value ) )
+            {
+                a[k] = arr[ start + i].value;
+                k++;i++;
+            }else
+            {
+                a[k] = arr[ mid+1+j].value;
+                k++;j++;
+            }
+        }
+
+
+        while(i<=n)
+        {
+            a[k] = arr[start+i].value;
+            k++;i++;
+        }
+
+        while(j<=m)
+        {
+            a[k] = arr[ mid+1+j ].value;
+            k++;j++;
+
+        }
+
+        for(var t=0; t<k; t++)
+        {
+
+            arr[start+t].value=a[t];
+            console.log(arr[start+t].value);
+        }
+        //console.log("A");
+    }
+
+    function mergeSort(arr,start,end, n) {
+
+        if(start<end)
+        {
+            //console.log(start + "   " + end )
+            var mid =Math.floor(  (start+end)/2  );
+            mergeSort(arr ,start ,mid , n);
+            mergeSort(arr , mid+1 , end , n);
+            merge(arr,start,end);
+
+        }
+
+    }
+
+    var sortTheArray = function () {
+
+        var n = document.getElementById("result").childNodes.length;
+        var arr = document.getElementById("result").childNodes;
+        n--;
+        mergeSort(arr,0,n-1,n);
+    }
+
+    var generate = function () {
+
+        var N= document.getElementById("enterN").value;
+        var result = document.getElementById("result");
+        while(result.hasChildNodes()) {
+            result.removeChild(result.lastChild);
+        }
+
+        for(var i=0; i<N; i++){
+            var input = document.createElement("input");
+            input.type="number";
+            input.value=0;
+            input.name="member"+i;
+            result.appendChild(input);
+        }
+
+        var button = document.createElement("input");
+        button.type= "button";
+        button.id = "sorting";
+        button.onclick = function(){
+            sortTheArray();
+        };
+        button.value = "Sort";
+        result.appendChild(button);
+    }
+
+</script>
+
+</html>

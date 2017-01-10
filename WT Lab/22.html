@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>22</h3>
+INPUT : <input type="text" id ="str" onkeyup="clearResult" >
+<input type="button" name="check" id ="check" onclick="checkString()" value="convert">
+<br><br>
+<div id="result">RESULT :</div>
+</body>
+
+<script type = "text/javascript">
+
+
+    var clearResult = function(){
+        var result = document.getElementById("result");
+        result.innerHTML=" ";
+    }
+
+    var checkString =function(){
+        console.log("in func");
+        var result = document.getElementById("result");
+        var check = document.getElementById("check");
+        var str = document.getElementById("str");
+
+        var finalString="RESULT : ";
+        for(var i=0; i<str.value.length; i++)
+        {
+            if(str.value.charAt(i)==' ')
+            continue;
+            if(str.value.charAt(i) == str.value.charAt(i).toUpperCase())
+            {
+               finalString +=str.value.charAt(i).toLowerCase();
+            }else{
+                finalString +=str.value.charAt(i).toUpperCase();
+            }
+        }
+        result.innerHTML = finalString ;
+    }
+</script>
+
+</html>

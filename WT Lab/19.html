@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .hide{
+            display: none;
+        }
+        .vis{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3>19 . SHOW PLAYER STATS </h3>
+
+    <ol>
+        <li>
+           <div>DHONI</div><br>
+            <div class="hide">Mahendra Singh Dhoni (About this sound pronunciation ;
+                commonly known as M. S. Dhoni; born 7 July 1981) is an Indian cricketer and
+                the current captain of the Indian national cricket team in limited-overs formats.
+                An attacking right-handed middle-order batsman and wicket-keeper, he is widely regarded
+                as one of the greatest finishers in limited-overs cricket. He made his
+                One Day International (ODI) debut in December 2004 against Bangladesh, and played his
+                first Test a year later against Sri Lanka.
+            </div>
+        </li>
+        <br><br>
+        <li>
+            <div>WARNER</div><br>
+            <div class="hide">David Andrew Warner (born 27 October 1986) is an Australian cricketer
+                and the vice captain of the team in all 3 formats of the game.
+                An explosive left-handed opening batsman, Warner is the first
+                Australian cricketer in 132 years to be selected for a national
+                team in any format without experience in first-class cricket.
+            </div>
+        </li>
+    </ol>
+
+
+</body>
+
+<script type = "text/javascript">
+    var dhoni = document.getElementsByTagName("div")[0];
+    var dhoniDES = document.getElementsByTagName("div")[1];
+
+    dhoni.addEventListener("click",function(){
+
+        if(dhoniDES.className=="hide")
+            dhoniDES.className = "vis";
+        else
+            dhoniDES.className = "hide";
+    });
+
+    var warner = document.getElementsByTagName("div")[2];
+    var warnerDES = document.getElementsByTagName("div")[3];
+
+    warner.addEventListener("click",function(){
+
+        if(warnerDES.className=="hide")
+            warnerDES.className = "vis";
+        else
+            warnerDES.className = "hide";
+    });
+
+
+</script>
+
+</html>
