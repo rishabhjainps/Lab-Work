@@ -14,4 +14,4 @@ http://www.mediafire.com/download/rbds52w6a34vf65/Graphics_in_Dev_C++.rar
 
 Works on Windows 
 
-U can try same Ubuntu
+U can try same in Ubuntu
