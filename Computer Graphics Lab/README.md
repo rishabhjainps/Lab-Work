@@ -4,7 +4,9 @@ Use <strong> Dev-C++  </strong>
 
 Uninstall any Dev-C++ software installed before on your system and also delete config file  for Dev-C++ 
 
-<h2>Follow simple steps given in videos to run graphics.h in devcpp </h2>
+<h2>Follow simple steps given in video to run graphics.h in devcpp </h2>
+
+Video Link : https://www.youtube.com/watch?v=gibqiFtBARY
 
 --> Download rar file from below link containing library files and devcpp software 
 
