@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.rj.android.resultmanagement.addMarks">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="ADD MARKS"
+        android:id="@+id/tV"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="STUDENT ROLL_ NO :"
+        android:id="@+id/textView20"
+        android:layout_below="@+id/tV"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="57dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/rollNo"
+        android:layout_alignBottom="@+id/textView20"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="SUBJECT CODE : "
+        android:id="@+id/textView21"
+        android:layout_below="@+id/textView20"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="39dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/subjectCode"
+        android:layout_alignBottom="@+id/textView21"
+        android:layout_alignEnd="@+id/rollNo"
+        android:layout_alignStart="@+id/rollNo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="MARKS :"
+        android:id="@+id/textView22"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/marks"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:layout_alignBottom="@+id/textView22"
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/subjectCode" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="add"
+        android:onClick="update"
+        android:id="@+id/update"
+        android:layout_marginBottom="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/tV" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:onClick="cancel"
+        android:id="@+id/cancel"
+        android:layout_alignTop="@+id/update"
+        android:layout_alignEnd="@+id/textView21" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/Label"
+        android:layout_above="@+id/cancel"
+        android:layout_marginBottom="41dp"
+        android:layout_alignEnd="@+id/update"
+        android:layout_alignStart="@+id/cancel" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="SEM"
+        android:id="@+id/ab"
+        android:layout_below="@+id/textView22"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="41dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sem"
+        android:inputType="numberSigned"
+        android:ems="10"
+        android:layout_alignBottom="@+id/ab"
+        android:layout_alignParentEnd="true" />
+
+
+</RelativeLayout>

@@ -1,3 +1,5 @@
+<strong>Computer Graphics Lab <strong>
+
 Please Donot use <strong>TURBO C++</strong>
 
 Use <strong> Dev-C++  </strong>
